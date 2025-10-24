@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minimal-front-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minimal-front
+  template:
+    metadata:
+      labels:
+        app: minimal-front
+    spec:
+      containers:
+      - name: minimal-front-container
+        image: vitorbrunor/minimal-api-front:v1.3 # <-- SUA IMAGEM DO FRONT-END AQUI
+        ports:
+        - containerPort: 80 # Porta padrão do Nginx que usamos no Dockerfile

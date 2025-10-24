@@ -1,0 +1,17 @@
+expose:
+  type: ingress
+  ingress:
+    hosts:
+      core: harbor.homelab.local
+    className: "traefik"
+
+externalURL: http://harbor.homelab.local
+
+harborAdminPassword: "Vit@32283930"
+
+notary:
+  enabled: false
+trivy:
+  enabled: false
+chartmuseum:
+  enaabled: false

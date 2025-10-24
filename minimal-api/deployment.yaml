@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minimal-api-deployment
+  namespace: default
+spec:
+  replicas: 1 # Começaremos com 1 para o teste
+  selector:
+    matchLabels:
+      app: minimal-api
+  template:
+    metadata:
+      labels:
+        app: minimal-api
+    spec:
+      containers:
+      - name: minimal-api-container
+        image: vitorbrunor/minimal-api-k8s:v1.7-redis-cors # Sua imagem no Docker Hub
+        ports:
+        - containerPort: 8080 # A porta que expomos no Dockerfile

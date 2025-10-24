@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-front-ingress
+  namespace: default
+spec:
+  rules:
+  - host: front.homelab.local # O endereço que usaremos no navegador
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minimal-front-service
+            port:
+              number: 80
