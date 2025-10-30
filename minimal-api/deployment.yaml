@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: minimal-api-container
-        image: harbor.homelab.local/test-api/minimal-api:861dd5571fa6f526f12d50b9d5cd9b1942e2ef43
+        image: harbor.homelab.local/test-api/minimal-api:2d2b53632140d3b1dd4da72109d6a0c6be7683b2
         ports:
         - containerPort: 8080 # A porta que expomos no Dockerfile
