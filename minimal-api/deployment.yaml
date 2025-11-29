@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: minimal-api-container
-        image: harbor.homelab.local/test-api/minimal-api:8f2e686d6b6038c89a52f7d1bcd57456c55fe7c0
+        image: harbor.homelab.local/test-api/minimal-api:b7eb92c23c3079a9bdaf281046964444b903b4bf
         ports:
         - containerPort: 8080
         resources:
