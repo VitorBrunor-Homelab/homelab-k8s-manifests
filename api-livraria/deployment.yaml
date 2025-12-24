@@ -17,7 +17,7 @@ spec:
       - name: regcred
       containers:
       - name: api-livraria
-        image: harbor.homelab.local/livraria/api-livraria:latest
+        image: harbor.homelab.local/api-livraria/api-livraria:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
