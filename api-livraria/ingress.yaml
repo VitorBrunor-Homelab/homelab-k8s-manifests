@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: api-livraria-Ingress
+  name: api-livraria-ingress
   namespace: default
 spec:
   rules:
   - host: livraria.homelab.local
-    htpp:
+    http:
       paths:
       - path: /
         pathType: Prefix
