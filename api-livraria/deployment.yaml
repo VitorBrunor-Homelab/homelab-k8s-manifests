@@ -8,20 +8,19 @@ spec:
   selector:
     matchLabels:
       app: api-livraria
-    template:
-      metadata:
-        labels:
-          app: api-livraria
-      specs:
-        imagePullSecret:
-        - name: regcred
-
-        containers:
-        - name: api-livraria
-          image: harbor.homelab.local/api-livraria/api-livraria:latest
-          imagePullPolicy: ALways
-          ports:
-          - containerPort: 8080
-          env:
-          - name: ConnectionStrings__OracleConnection
-            value: "User Id=project_api;Password=30317512;Data Source=192.168.1.8:1521/XEPDB1;" 
+  template:
+    metadata:
+      labels:
+        app: api-livraria
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: api-livraria
+        image: harbor.homelab.local/livraria/api-livraria:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ConnectionStrings__OracleConnection
+          value: "User Id=project_api;Password=30317512;Data Source=192.168.1.8:1521/XEPDB1;"
