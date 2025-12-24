@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-livraria
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/VitorBrunor-Homelab/homelab-k8s-manifests.git
+    targetRevision: main
+    path: api-livraria
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
